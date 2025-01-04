@@ -1,6 +1,6 @@
 # Sparkline library for Go
 
-This is a fork of [https://github.com/dtolpin/gosparkline](Sparkline Library for Go by David Tolpin).
+This is a fork of [Sparkline Library for Go by David Tolpin](https://github.com/dtolpin/gosparkline).
 
 ## Example
 
