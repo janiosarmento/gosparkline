@@ -1,5 +1,5 @@
 // Sparklines
-package spark // import "github.com/janiosarmento/sparkline"
+package spark // import "github.com/janiosarmento/gosparkline"
 
 import (
 	"math"
