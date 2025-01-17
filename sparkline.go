@@ -14,10 +14,16 @@ func Line(ys []float64) string {
 	}
 
 	const base = 0.01
+	const upper_min = 1.0
+	
 	max := findMax(ys)
 
 	if max <= base { // Garantir escala válida
 		max = base + 1
+	}
+
+	if max < upper_min {
+		max = upper_min
 	}
 
 	return generateSparkline(ys, base, max)
