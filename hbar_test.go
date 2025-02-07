@@ -1,27 +1,54 @@
 package spark
 
-import "testing"
+import (
+	"strings"
+	"testing"
+)
 
-func TestBarChart(t *testing.T) {
-	tests := []struct {
-		total   float64
-		partial float64
-		width   int
-		label   string
-	}{
-		{100, 30, 20, "valor de 30%"},
-		{50, 25, 10, "metade"},
-		{200, 50, 40, "25% completo"},
-		{0, 0, 10, "invalid"}, // Caso total = 0 (valor inválido)
+func TestBarChart_Default(t *testing.T) {
+	total := 100.0
+	partial := 50.0
+	width := 20
+	label := "Test"
+
+	bar := BarChart(total, partial, width, label, "Default")
+
+	if !strings.Contains(bar, "Test") {
+		t.Errorf("Expected label 'Test' in output, got: %s", bar)
 	}
+	if len(bar) == 0 {
+		t.Errorf("Expected non-empty output, got empty string")
+	}
+}
 
-	for _, test := range tests {
-		t.Run(test.label, func(t *testing.T) {
-			result := BarChart(test.total, test.partial, test.width, test.label)
-			if len(result) == 0 {
-				t.Errorf("Expected a bar chart for %q, got empty string", test.label)
-			}
-			// Visual validation or pattern matching could go here.
-		})
+func TestBarChart_CustomTheme(t *testing.T) {
+	total := 100.0
+	partial := 75.0
+	width := 30
+	label := "Custom"
+
+	bar := BarChart(total, partial, width, label, "Evergreen")
+
+	if !strings.Contains(bar, "Custom") {
+		t.Errorf("Expected label 'Custom' in output, got: %s", bar)
+	}
+	if len(bar) == 0 {
+		t.Errorf("Expected non-empty output, got empty string")
+	}
+}
+
+func TestBarChart_InvalidThemeFallback(t *testing.T) {
+	total := 100.0
+	partial := 30.0
+	width := 25
+	label := "Fallback"
+
+	bar := BarChart(total, partial, width, label, "NonExistentTheme")
+
+	if !strings.Contains(bar, "Fallback") {
+		t.Errorf("Expected label 'Fallback' in output, got: %s", bar)
+	}
+	if len(bar) == 0 {
+		t.Errorf("Expected non-empty output, got empty string")
 	}
 }

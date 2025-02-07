@@ -1,6 +1,7 @@
 package spark
 
 import (
+	"math"
 	"strings"
 	"unicode/utf8"
 )
@@ -15,39 +16,41 @@ type BarChartConfig struct {
 
 // DefaultConfig returns a default color configuration
 func DefaultConfig() BarChartConfig {
-	return BarChartConfig{
-		FilledColor: "\033[48;5;30m", // Dark Cyan (Pastel)
-		EmptyColor:  "\033[48;5;23m", // Even Darker Cyan
-		TextColor:   "\033[97m",      // White text
-		ResetColor:  "\033[0m",       // Reset
-	}
+	return Themes["Default"]
 }
 
-// BarChart generates a static progress bar with a customizable color scheme.
-// If no custom config is provided, it falls back to the default pastel theme.
-func BarChart(total, partial float64, width int, label string, configs ...BarChartConfig) string {
+// BarChart generates a static progress bar with a customizable color scheme or a predefined theme.
+// If no custom config is provided, it falls back to the default theme.
+func BarChart(total, partial float64, width int, label string, themeOrConfig interface{}) string {
 	if total <= 0 || width <= 0 {
 		return ""
 	}
 
-	// Define the configuration: use user-defined config if provided, otherwise use default
-	config := DefaultConfig()
-	if len(configs) > 0 {
-		config = configs[0]
+	var config BarChartConfig
+
+	switch v := themeOrConfig.(type) {
+	case string:
+		if theme, exists := Themes[v]; exists {
+			config = theme
+		} else {
+			config = DefaultConfig()
+		}
+	case BarChartConfig:
+		config = v
+	default:
+		config = DefaultConfig()
 	}
 
 	// Calculate the widths for the filled and unfilled parts
-	partialWidth := int((partial / total) * float64(width))
+	partialWidth := int(math.Round((partial / total) * float64(width)))
 	if partialWidth > width {
 		partialWidth = width
 	}
 
 	// Ensure label fits within the bar's width
 	labelRunes := []rune(label)
-	labelLength := utf8.RuneCountInString(label)
-	if labelLength > width {
+	if utf8.RuneCountInString(label) > width {
 		labelRunes = labelRunes[:width]
-		labelLength = width
 	}
 
 	// Create the bar
