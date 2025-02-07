@@ -56,7 +56,6 @@ Themes["AutumnGlow"]   // Soft Amber (Swap theme)
 
 Below is a preview of how each theme looks. The results may vary depending on your terminal color scheme.
 
-```html
 <style>
   .bar { width: 300px; height: 20px; position: relative; border-radius: 5px; overflow: hidden; font-family: monospace; text-align: center; line-height: 20px; font-weight: bold; color: white; }
   .bar-fill { height: 100%; position: absolute; top: 0; left: 0; }
@@ -74,7 +73,6 @@ Below is a preview of how each theme looks. The results may vary depending on yo
 <div class="bar" style="background-color: #21252b;"><div class="bar-fill" style="width: 70%; background-color: #61afef;">OneDark</div></div>
 <div class="bar" style="background-color: #1e5631;"><div class="bar-fill" style="width: 70%; background-color: #a4de02;">Evergreen</div></div>
 <div class="bar" style="background-color: #6b4226;"><div class="bar-fill" style="width: 70%; background-color: #ffb347;">AutumnGlow</div></div>
-```  
 
 ## Changes
 
@@ -94,6 +92,7 @@ To ensure the library is working as expected, you can run the test suite:
 
 ```sh
 go test ./...
+```
 
 ## License
 
