@@ -52,27 +52,12 @@ Themes["Evergreen"]    // Muted Green (RAM theme)
 Themes["AutumnGlow"]   // Soft Amber (Swap theme)
 ```
 
-### Theme Preview
+### Theme Preview  
 
-Below is a preview of how each theme looks. The results may vary depending on your terminal color scheme.
+To see how each theme looks, open [this HTML preview](https://htmlpreview.github.io/?gist.githubusercontent.com/janiosarmento/008d9dabf0c1652639e17e102ce60765/raw/c99b218eebd23ac4048d43ea39c64f5e43b609ee/theme-preview.html) in your browser.  
 
-<style>
-  .bar { width: 300px; height: 20px; position: relative; border-radius: 5px; overflow: hidden; font-family: monospace; text-align: center; line-height: 20px; font-weight: bold; color: white; }
-  .bar-fill { height: 100%; position: absolute; top: 0; left: 0; }
-</style>
+The preview simulates a dark-themed terminal with all available themes.
 
-<div class="bar" style="background-color: #003b46;"><div class="bar-fill" style="width: 70%; background-color: #007e7e;">Default</div></div>
-<div class="bar" style="background-color: #000080;"><div class="bar-fill" style="width: 70%; background-color: #8b0000;">Classic</div></div>
-<div class="bar" style="background-color: #6a8a82;"><div class="bar-fill" style="width: 70%; background-color: #a8d5ba;">Pastel</div></div>
-<div class="bar" style="background-color: #240046;"><div class="bar-fill" style="width: 70%; background-color: #5a189a;">Cyberpunk</div></div>
-<div class="bar" style="background-color: #444444;"><div class="bar-fill" style="width: 70%; background-color: #bbbbbb;">Monochrome</div></div>
-<div class="bar" style="background-color: #073642;"><div class="bar-fill" style="width: 70%; background-color: #b58900;">Solarized</div></div>
-<div class="bar" style="background-color: #282a36;"><div class="bar-fill" style="width: 70%; background-color: #50fa7b;">Dracula</div></div>
-<div class="bar" style="background-color: #3c3836;"><div class="bar-fill" style="width: 70%; background-color: #d65d0e;">Gruvbox</div></div>
-<div class="bar" style="background-color: #2e3440;"><div class="bar-fill" style="width: 70%; background-color: #81a1c1;">Nord</div></div>
-<div class="bar" style="background-color: #21252b;"><div class="bar-fill" style="width: 70%; background-color: #61afef;">OneDark</div></div>
-<div class="bar" style="background-color: #1e5631;"><div class="bar-fill" style="width: 70%; background-color: #a4de02;">Evergreen</div></div>
-<div class="bar" style="background-color: #6b4226;"><div class="bar-fill" style="width: 70%; background-color: #ffb347;">AutumnGlow</div></div>
 
 ## Changes
 
