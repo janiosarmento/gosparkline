@@ -27,11 +27,11 @@ var Themes = map[string]BarChartConfig{
 		ResetColor:  "\033[0m",
 	},
 	"Monochrome": {
-		FilledColor: "\033[48;5;232m", // Dark Gray
-		EmptyColor:  "\033[48;5;255m", // Light Gray
-		TextColor:   "\033[97m",
+		FilledColor: "\033[48;5;15m", // White
+		EmptyColor:  "\033[48;5;240m", // Gray
+		TextColor:   "\033[30m", // Black text
 		ResetColor:  "\033[0m",
-	},
+	},	
 	"Solarized": {
 		FilledColor: "\033[48;5;136m", // Solarized Yellow
 		EmptyColor:  "\033[48;5;33m",  // Solarized Blue

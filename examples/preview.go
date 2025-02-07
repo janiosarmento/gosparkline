@@ -18,7 +18,7 @@ func main() {
 	fmt.Println()
 
 	for themeName := range spark.Themes {
-		used := total * (0.4 + r.Float64()*0.4)
+		used := total * (0.2 + r.Float64()*0.6)
 
 		bar := spark.BarChart(total, used, width, themeName, themeName)
 		fmt.Println(bar)
