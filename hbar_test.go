@@ -1,8 +1,10 @@
-package spark
+package spark_test
 
 import (
 	"strings"
 	"testing"
+
+	spark "github.com/janiosarmento/gosparkline"
 )
 
 func TestBarChart_Default(t *testing.T) {
@@ -11,7 +13,7 @@ func TestBarChart_Default(t *testing.T) {
 	width := 20
 	label := "Test"
 
-	bar := BarChart(total, partial, width, label, "Default")
+	bar := spark.BarChart(total, partial, width, label, "Default")
 
 	if !strings.Contains(bar, "Test") {
 		t.Errorf("Expected label 'Test' in output, got: %s", bar)
@@ -27,7 +29,7 @@ func TestBarChart_CustomTheme(t *testing.T) {
 	width := 30
 	label := "Custom"
 
-	bar := BarChart(total, partial, width, label, "Evergreen")
+	bar := spark.BarChart(total, partial, width, label, "Evergreen")
 
 	if !strings.Contains(bar, "Custom") {
 		t.Errorf("Expected label 'Custom' in output, got: %s", bar)
@@ -43,7 +45,7 @@ func TestBarChart_InvalidThemeFallback(t *testing.T) {
 	width := 25
 	label := "Fallback"
 
-	bar := BarChart(total, partial, width, label, "NonExistentTheme")
+	bar := spark.BarChart(total, partial, width, label, "NonExistentTheme")
 
 	if !strings.Contains(bar, "Fallback") {
 		t.Errorf("Expected label 'Fallback' in output, got: %s", bar)

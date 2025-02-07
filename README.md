@@ -54,9 +54,9 @@ Themes["AutumnGlow"]   // Soft Amber (Swap theme)
 
 ### Theme Preview  
 
-To see how each theme looks, open [this HTML preview](https://htmlpreview.github.io/?gist.githubusercontent.com/janiosarmento/008d9dabf0c1652639e17e102ce60765/raw/c99b218eebd23ac4048d43ea39c64f5e43b609ee/theme-preview.html) in your browser.  
+Below is a preview of the available themes:
 
-The preview simulates a dark-themed terminal with all available themes.
+![Theme Preview](examples/preview.png)
 
 
 ## Changes

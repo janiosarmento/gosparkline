@@ -16,7 +16,7 @@ func Line(ys []float64) string {
 	const base = 0.01
 	const upper_min = 1.0
 	
-	max := findMax(ys)
+	max := FindMax(ys)
 
 	if max <= base { // Garantir escala válida
 		max = base + 1
@@ -28,18 +28,6 @@ func Line(ys []float64) string {
 
 	return generateSparkline(ys, base, max)
 }
-
-// findMax returns the maximum value in a slice of float64.
-func findMax(ys []float64) float64 {
-	max := math.Inf(-1)
-	for _, y := range ys {
-		if y > max {
-			max = y
-		}
-	}
-	return max
-}
-
 // generateSparkline maps values to rune levels and creates a sparkline string.
 func generateSparkline(ys []float64, base, max float64) string {
 	line := make([]rune, len(ys))
@@ -57,3 +45,14 @@ func generateSparkline(ys []float64, base, max float64) string {
 
 	return string(line)
 }
+
+// findMax returns the maximum value in a slice of float64.
+func FindMax(ys []float64) float64 {
+	max := math.Inf(-1)
+	for _, y := range ys {
+		if y > max {
+			max = y
+		}
+	}
+	return max
+} 

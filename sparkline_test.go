@@ -1,8 +1,10 @@
-package spark
+package spark_test
 
 import (
 	"testing"
 	"unicode/utf8"
+
+	spark "github.com/janiosarmento/gosparkline"
 )
 
 func TestLine(t *testing.T) {
@@ -21,7 +23,7 @@ func TestLine(t *testing.T) {
 		{"contains negatives", []float64{-1, 0, 1, 2}, 4},
 		{"large values", []float64{1000, 2000, 3000, 4000}, 4},
 	} {
-		line := Line(c.ys)
+		line := spark.Line(c.ys)
 		length := utf8.RuneCountInString(line)
 		if length != c.length {
 			t.Errorf("%s: expected sparkline of length %d, got %q of length %d",
