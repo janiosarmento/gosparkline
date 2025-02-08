@@ -24,4 +24,15 @@ func main() {
 		fmt.Println(bar)
 		fmt.Println()
 	}
+
+	fmt.Println("\n=== Sparkline Preview ===")
+	fmt.Println()
+
+	values := make([]float64, width)
+	for i := range values {
+		values[i] = r.Float64() * 100
+	}
+	sparkline := spark.Line(values)
+	fmt.Println(sparkline)
+	fmt.Println()
 }

@@ -45,8 +45,8 @@ var Themes = map[string]BarChartConfig{
 		ResetColor:  "\033[0m",
 	},
 	"Gruvbox": {
-		FilledColor: "\033[48;5;137m", // Gruvbox Orange
-		EmptyColor:  "\033[48;5;94m",  // Gruvbox Brown
+		FilledColor: "\033[48;5;124m", // Gruvbox Dark Red
+		EmptyColor:  "\033[48;5;88m",  // Gruvbox Deeper Red
 		TextColor:   "\033[97m",
 		ResetColor:  "\033[0m",
 	},
